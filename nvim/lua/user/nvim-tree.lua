@@ -83,10 +83,15 @@ function M.config()
   require("nvim-tree").setup {
       sync_root_with_cwd = true,
       respect_buf_cwd = true,
+      git = {
+         enable = true,
+         ignore = false,
+         timeout = 500
+      },
     on_attach = on_attach,
     update_focused_file = {
       enable = true,
-      update_root = true,
+      update_root = false,
       update_cwd = true
     },
     renderer = {

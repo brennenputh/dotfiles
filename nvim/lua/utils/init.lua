@@ -1,14 +1,40 @@
 local M = {}
 
 M.servers = {
-  "lua_ls",
-  "cssls",
-  "html",
-  "tsserver",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+   -- Shell scripting
+   "bashls",
+
+   -- C++
+   "clangd",
+   "cmake",
+
+   -- Rust
+   "rust_analyzer",
+
+   -- Webdev
+   "html",
+   "cssls",
+   "tsserver",
+
+   -- JVM
+   "groovyls",
+   "kotlin_language_server",
+   "gradle_ls",
+   "jdtls",
+
+   -- Python
+   "pyright",
+
+   -- Lua
+   "lua_ls",
+
+   -- Data Formats
+   "jsonls",
+   "yamlls",
+
+   -- Docker
+   "docker_compose_language_service",
+   "dockerls"
 }
 
 return M

@@ -1,5 +1,5 @@
 local M = {
-   "neovim/nvim-lspconfig",
+   "tpope/vim-fugitive",
    lazy = false
 }
 

@@ -82,6 +82,3 @@ keymap("n", "<leader>i", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-
--- Floating Terminal
-keymap("n", "t", ":FloatermToggle myfloat<CR>")

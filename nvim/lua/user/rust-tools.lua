@@ -1,6 +1,6 @@
 local M = {
    "simrat39/rust-tools.nvim",
-   lazy = true
+   lazy = false
 }
 
 function M.config()

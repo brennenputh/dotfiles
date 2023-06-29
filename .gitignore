@@ -1,2 +1,10 @@
 /*
 /*/
+!nvim/
+!neofetch/
+!htop/
+!kitty/
+!i3/
+!picom.conf
+!dunst/
+!polybar/

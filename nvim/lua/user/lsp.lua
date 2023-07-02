@@ -16,22 +16,25 @@ function M.config()
   capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
   local function lsp_keymaps(bufnr)
-    local opts = { noremap = true, silent = true }
-    local keymap = vim.api.nvim_buf_set_keymap
-    keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-    keymap(bufnr, "n", "<leader>lI", "<cmd>Mason<cr>", opts)
-    keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-    keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-    keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-    keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-    keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+   local function keymap(buffer, mode, lhs, rhs, opts)
+      local options = { noremap = true, silent = true }
+      if opts then
+         options = vim.tbl_extend('force', options, opts)
+      end
+      vim.api.nvim_buf_set_keymap(buffer, mode, lhs, rhs, options)
+   end
+    keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = 'Go to Declaration' })
+    keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = 'Go to Definition' })
+    keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = 'Hover' })
+    keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = 'Go to Implementation' })
+    keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = 'Go to References' })
+    keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = 'Open Diagnostic Float' })
+    keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = 'Code Action' })
+    keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", { desc = 'Go To Next' })
+    keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", { desc = 'Go To Previous' })
+    keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = 'Rename' })
+    keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = 'Signature Help' })
+    keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", { desc = 'Set LOC List' })
   end
 
   local lspconfig = require "lspconfig"

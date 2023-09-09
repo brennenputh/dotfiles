@@ -44,7 +44,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>")
 keymap("n", "<S-h>", ":bprevious<CR>")
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>")
+keymap("n", "<S-z>", "<cmd>Bdelete!<CR>")
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = 'Clear Highlights' })
@@ -68,6 +68,19 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", { desc = 'Grep' })
 keymap("n", "<leader>fp", ":Telescope projects<CR>", { desc = 'Project Select' })
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", { desc = 'Buffer Select' })
 
+-- Trouble
+keymap("n", "<leader>tt", ":TroubleToggle<CR>", { desc = 'Toggle Trouble' })
+keymap("n", "<leader>tw", ":TroubleToggle workspace_diagnostics<CR>", { desc = 'Workspace Diagnostics' })
+keymap("n", "<leader>td", ":TroubleToggle document_diagnostics<CR>", { desc = 'Document Diagnostics' })
+keymap("n", "<leader>tq", ":TroubleToggle quickfix<CR>", { desc = 'Quickfix' })
+keymap("n", "<leader>tl", ":TroubleToggle loclist<CR>", { desc = 'LOCList' })
+keymap("n", "<leader>tr", ":TroubleToggle lsp_references<CR>", { desc = 'LSP References' })
+
+-- Diffview
+keymap("n", "<leader>so", ":DiffviewOpen<CR>", { desc = 'Open Diff View' })
+keymap("n", "<leader>sc", ":DiffviewClose<CR>", { desc = 'Close Diff View' })
+
+
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = 'Toggle Breakpoint' })
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = 'Continue' })
@@ -81,3 +94,16 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", { desc = 'Ter
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = 'Format Code' })
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = 'Go to Declaration' })
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = 'Go to Definition' })
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = 'Hover' })
+keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = 'Go to Implementation' })
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = 'Go to References' })
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = 'Open Diagnostic Float' })
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = 'Code Action' })
+keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", { desc = 'Go To Next' })
+keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", { desc = 'Go To Previous' })
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = 'Rename' })
+keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = 'Signature Help' })
+keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", { desc = 'Set LOC List' })
+

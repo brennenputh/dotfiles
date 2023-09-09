@@ -1,6 +1,9 @@
 local M = {
   "nvim-lualine/lualine.nvim",
   event = { "VimEnter", "InsertEnter", "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
+   dependencies = {
+      "chrisgrieser/nvim-recorder"
+   }
 }
 
 function M.config()
@@ -42,6 +45,9 @@ function M.config()
   local spaces = function()
     return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
   end
+
+   local recorder = require('recorder')
+
   lualine.setup {
     options = {
       globalstatus = true,
@@ -57,8 +63,8 @@ function M.config()
       lualine_b = { "branch" },
       lualine_c = { diagnostics },
       lualine_x = { diff, spaces, "encoding", filetype },
-      lualine_y = { location },
-      lualine_z = { "progress" },
+      lualine_y = { location, recorder.displaySlots },
+      lualine_z = { "progress", recorder.recordingStatus },
     },
   }
 end

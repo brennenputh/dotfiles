@@ -15,6 +15,7 @@ M.servers = {
    "html",
    "cssls",
    "tsserver",
+   "svelte",
 
    -- JVM
    "groovyls",

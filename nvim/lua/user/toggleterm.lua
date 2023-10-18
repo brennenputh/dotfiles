@@ -10,7 +10,9 @@ function M.config()
    end
 
    toggleterm.setup {
-      size = 80,
+      size = function(term)
+         return vim.o.columns * 0.4
+      end,
       open_mapping = [[<c-\>]],
       hide_numbers = true,
       shade_terminals = true,

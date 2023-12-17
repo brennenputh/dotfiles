@@ -50,6 +50,7 @@ keymap("n", "<S-z>", "<cmd>Bdelete!<CR>")
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = 'Clear Highlights' })
 
 -- Visual --
+
 -- Stay in indent mode
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
@@ -80,7 +81,6 @@ keymap("n", "<leader>tr", ":TroubleToggle lsp_references<CR>", { desc = 'LSP Ref
 keymap("n", "<leader>so", ":DiffviewOpen<CR>", { desc = 'Open Diff View' })
 keymap("n", "<leader>sc", ":DiffviewClose<CR>", { desc = 'Close Diff View' })
 
-
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = 'Toggle Breakpoint' })
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = 'Continue' })
@@ -92,7 +92,7 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = 'Run 
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", { desc = 'Toggle UI' })
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", { desc = 'Terminate' })
 
--- Lsp
+-- LSP
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = 'Format Code' })
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = 'Go to Declaration' })
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = 'Go to Definition' })

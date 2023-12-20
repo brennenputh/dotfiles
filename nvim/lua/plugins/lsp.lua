@@ -30,7 +30,15 @@ function M.config()
   lspconfig.tsserver.setup {}
   lspconfig.svelte.setup {}
 
-  lspconfig.pyright.setup {}
+  lspconfig.pyright.setup {
+    settings = {
+      python = {
+        analysis = {
+          typeCheckingMode = "off",
+        }
+      }
+    }
+  }
 
   lspconfig.lua_ls.setup {
     settings = {

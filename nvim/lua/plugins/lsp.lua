@@ -64,6 +64,8 @@ function M.config()
 
   lspconfig.jsonls.setup {}
   lspconfig.yamlls.setup {}
+
+  lspconfig.texlab.setup {}
 end
 
 return M

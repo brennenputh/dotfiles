@@ -10,7 +10,7 @@ function M.config()
    end
 
    toggleterm.setup {
-      size = function(term)
+      size = function()
          return vim.o.columns * 0.4
       end,
       open_mapping = [[<c-\>]],
@@ -26,7 +26,7 @@ function M.config()
    }
 
    function _G.set_terminal_keymaps()
-       local opts = { noremap = true }
+       -- local opts = { noremap = true }
        -- vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
    end
 

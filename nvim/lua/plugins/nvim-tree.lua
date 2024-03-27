@@ -1,6 +1,5 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
-  lazy = false,
 }
 
 function M.config()

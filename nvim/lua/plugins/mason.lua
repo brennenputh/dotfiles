@@ -9,7 +9,7 @@ local M = {
    }
 }
 
-function M.config() 
+function M.config()
   require("mason").setup {}
 end
 

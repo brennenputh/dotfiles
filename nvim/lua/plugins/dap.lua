@@ -1,10 +1,8 @@
 local M = {
   "mfussenegger/nvim-dap",
-  lazy = false,
   dependencies = {
     {
       "rcarriga/nvim-dap-ui",
-      lazy = false
     }
   }
 }

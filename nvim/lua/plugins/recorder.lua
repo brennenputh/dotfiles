@@ -1,5 +1,5 @@
 local M = {
-   "chrisgrieser/nvim-recorder",
+  "chrisgrieser/nvim-recorder",
 }
 
 return M

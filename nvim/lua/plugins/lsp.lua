@@ -29,8 +29,6 @@ function M.config()
 
   lspconfig.tsserver.setup {}
   lspconfig.svelte.setup {}
-  lspconfig.vuels.setup {
-  }
 
   lspconfig.pyright.setup {
     settings = {

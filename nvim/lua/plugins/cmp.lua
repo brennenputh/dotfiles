@@ -1,5 +1,6 @@
 local M = {
   "hrsh7th/nvim-cmp",
+  lazy = true,
   dependencies = {
     {
       "hrsh7th/cmp-nvim-lsp",

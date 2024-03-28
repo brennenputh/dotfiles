@@ -1,10 +1,11 @@
 local M = {
-  "mfussenegger/nvim-dap",
+  "mfussenegger/nvim-dap-ui",
   dependencies = {
     {
-      "rcarriga/nvim-dap-ui",
+      "rcarriga/nvim-dap",
     }
-  }
+  },
+  lazy = true
 }
 
 function M.config()

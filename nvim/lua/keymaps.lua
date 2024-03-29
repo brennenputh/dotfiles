@@ -24,7 +24,7 @@ keymap("n", "<S-h>", ":bprevious<CR>")
 keymap("n", "<S-z>", "<cmd>Bdelete!<CR>")
 
 -- Clear Highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = 'Clear Highlights' })
+keymap("n", "<Esc>", ":nohl<CR>:echo<CR>")
 
 -- Quick Window Switching
 keymap("n", "<C-h>", "<cmd>wincmd h<CR>")

@@ -30,7 +30,7 @@ function M.config()
       "tsserver",
       "svelte",
       "pyright",
-      "lus_ls",
+      "lua_ls",
       "jsonls",
       "yamlls",
       "texlab"

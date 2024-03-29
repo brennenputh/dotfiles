@@ -4,6 +4,10 @@ local M = {
   dependencies = {
     {
       "hrsh7th/cmp-nvim-lsp",
+      {
+        "williamboman/mason.nvim",
+        lazy = false
+      }
     },
   },
 }
@@ -14,6 +18,24 @@ function M.config()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+
+  require("mason-lspconfig").setup {
+    ensure_installed = {
+      "bashls",
+      "clangd",
+      "cmake",
+      "rust_analyzer",
+      "html",
+      "cssls",
+      "tsserver",
+      "svelte",
+      "pyright",
+      "lus_ls",
+      "jsonls",
+      "yamlls",
+      "texlab"
+    }
+  }
 
   local lspconfig = require "lspconfig"
 

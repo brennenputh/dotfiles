@@ -5,6 +5,10 @@ local M = {
       {
          "williamboman/mason-lspconfig.nvim",
          lazy = false
+      },
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        lazy = false
       }
    }
 }

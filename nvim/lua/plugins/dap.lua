@@ -1,20 +1,24 @@
 local M = {
-  "mfussenegger/nvim-dap-ui",
+  "rcarriga/nvim-dap-ui",
   dependencies = {
-    {
-      "rcarriga/nvim-dap",
-    }
+    "mfussenegger/nvim-dap",
+    "nvim-neotest/nvim-nio",
+    "williamboman/mason.nvim",
   },
-  lazy = true
+  lazy = false
 }
 
 function M.config()
-  local dap = require "dap"
+  local dap = require("dap")
+  local dapui = require("dapui")
+  local mason_dap = require("mason-nvim-dap")
 
-  local dap_ui_status_ok, dapui = pcall(require, "dapui")
-  if not dap_ui_status_ok then
-    return
-  end
+  mason_dap.setup({
+    ensure_installed = {
+      "codelldb",
+      "python"
+    }
+  })
 
   dapui.setup()
 

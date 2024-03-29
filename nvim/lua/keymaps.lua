@@ -26,6 +26,12 @@ keymap("n", "<S-z>", "<cmd>Bdelete!<CR>")
 -- Clear Highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = 'Clear Highlights' })
 
+-- Quick Window Switching
+keymap("n", "<C-h>", "<cmd>wincmd h<CR>")
+keymap("n", "<C-j>", "<cmd>wincmd j<CR>")
+keymap("n", "<C-k>", "<cmd>wincmd k<CR>")
+keymap("n", "<C-l>", "<cmd>wincmd l<CR>")
+
 --[[ VISUAL MODE ]]--
 
 -- Stay in indent mode

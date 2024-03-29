@@ -31,6 +31,7 @@ function M.config()
 
       enforce_regular_tabs = true,
 
+      highlights = require("catppuccin.groups.integrations.bufferline").get()
     },
   }
 end

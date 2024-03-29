@@ -1,6 +1,6 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
-  lazy = true,
+  lazy = false,
   cmd = {
     "NvimTreeToggle", "NvimTreeOpen"
   }
@@ -9,18 +9,9 @@ local M = {
 function M.config()
   -- local tree_cb = require("nvim-tree.config").nvim_tree_callback
   require("nvim-tree").setup {
-      sync_root_with_cwd = true,
-      respect_buf_cwd = true,
-      git = {
-         enable = true,
-         ignore = false,
-         timeout = 500
-      },
-    update_focused_file = {
-      enable = true,
-      update_root = true,
-      update_cwd = true
-    },
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+
     renderer = {
       icons = {
         glyphs = {
@@ -58,9 +49,24 @@ function M.config()
         error = "",
       },
     },
+
     view = {
       width = 30,
       side = "left",
+    },
+
+    -- Git integration
+    git = {
+       enable = true,
+       ignore = false,
+       timeout = 500
+    },
+
+    -- project.nvim integration
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+      update_cwd = true
     },
   }
 end

@@ -24,24 +24,11 @@ function M.config()
     no_italic = false, -- Force no italic
     no_bold = false, -- Force no bold
     no_underline = false, -- Force no underline
-    styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-        comments = { }, -- Change the style of comments
-        conditionals = { },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-        -- miscs = {}, -- Uncomment to turn off hard-coded styles
-    },
     color_overrides = {
       mocha = {
         base= "#1c1917",
+        crust= "#1c1917",
+        mantle= "#1a1715",
         blue= "#22d3ee",
         green= "#86efac",
         flamingo= "#D6409F",
@@ -61,16 +48,12 @@ function M.config()
     custom_highlights = {},
     integrations = {
         cmp = true,
-        gitsigns = true,
-        nvimtree = true,
+        dap = true,
+        dap_ui = true,
         treesitter = true,
-        notify = false,
-        mini = {
-            enabled = true,
-            indentscope_color = "",
-        },
         telescope = true,
         mason = true,
+        which_key = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
   })

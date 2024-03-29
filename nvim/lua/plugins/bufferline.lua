@@ -17,6 +17,14 @@ function M.config()
         {
           filetype = "NvimTree",
           text = "File Explorer",
+          highlight = "Directory",
+          text_align = "left"
+        },
+        {
+          filetype = "dapui_scopes",
+          text = "Debugger",
+          highlight = "Directory",
+          text_align = "left",
         }
       },
       separator_style = "slant",            -- | "thick" | "thin" | { 'any', 'any' },

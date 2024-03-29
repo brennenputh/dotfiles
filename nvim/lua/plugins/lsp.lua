@@ -28,7 +28,6 @@ function M.config()
       "html",
       "cssls",
       "tsserver",
-      "svelte",
       "pyright",
       "lua_ls",
       "jsonls",
@@ -48,9 +47,7 @@ function M.config()
 
   lspconfig.html.setup {}
   lspconfig.cssls.setup {}
-
   lspconfig.tsserver.setup {}
-  lspconfig.svelte.setup {}
 
   lspconfig.pyright.setup {
     settings = {

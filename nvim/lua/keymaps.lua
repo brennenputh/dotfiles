@@ -1,10 +1,10 @@
 -- Shorten function name
 local function keymap(mode, lhs, rhs, opts)
-   local options = { silent = true }
-   if opts then
-      options = vim.tbl_extend('force', options, opts)
-   end
-   vim.keymap.set(mode, lhs, rhs, options)
+  local options = { silent = true }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 keymap("", "<Space>", "<Nop>")
@@ -14,8 +14,8 @@ vim.g.mapleader = " "
 
 -- Register Preservation for dd
 vim.keymap.set("n", "dd", function ()
-	if vim.fn.getline(".") == "" then return '"_dd' end
-	return "dd"
+  if vim.fn.getline(".") == "" then return '"_dd' end
+  return "dd"
 end, {expr = true})
 
 -- Navigate Buffers
@@ -31,6 +31,9 @@ keymap("n", "<C-h>", "<cmd>wincmd h<CR>")
 keymap("n", "<C-j>", "<cmd>wincmd j<CR>")
 keymap("n", "<C-k>", "<cmd>wincmd k<CR>")
 keymap("n", "<C-l>", "<cmd>wincmd l<CR>")
+
+-- Indent File
+keymap("n", "<leader>I", "gg=G", { desc = "Indent File" })
 
 --[[ VISUAL MODE ]]--
 
@@ -49,8 +52,14 @@ keymap("n", "<leader>fr", ":Telescope live_grep<CR>", { desc = 'Ripgrep' })
 keymap("n", "<leader>fp", ":Telescope projects<CR>", { desc = 'Project Select' })
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", { desc = 'Buffer Select' })
 
+-- Close dap when nvim tree opens
+local function tree_toggle()
+  require('dapui').close()
+  require('nvim-tree.api').tree.toggle()
+end
+
 -- nvim-tree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Nvim Tree" })
+keymap("n", "<leader>e", tree_toggle, { desc = "Nvim Tree" })
 
 -- Trouble
 keymap("n", "<leader>tt", ":TroubleToggle<CR>", { desc = 'Toggle Trouble' })
@@ -75,6 +84,12 @@ keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = 'Rename'
 keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = 'Signature Help' })
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", { desc = 'Set LOC List' })
 
+-- Close NvimTree when DAP opens
+local function dap_toggle()
+  require("nvim-tree.api").tree.close()
+  require('dapui').toggle()
+end
+
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Toggle Breakpoint" })
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = 'Continue' })
@@ -83,5 +98,5 @@ keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", { desc = 'Ste
 keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", { desc = 'Step Out' })
 keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", { desc = 'Toggle Repl'})
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = 'Run Last' })
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", { desc = 'Toggle UI' })
+keymap("n", "<leader>du", dap_toggle, { desc = 'Toggle UI' })
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", { desc = 'Terminate' })

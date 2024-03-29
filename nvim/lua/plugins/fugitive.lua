@@ -1,5 +1,5 @@
 local M = {
-   "tpope/vim-fugitive",
+  "tpope/vim-fugitive",
   lazy = true,
   cmd = {
     "G", "Git", "Gdiffsplit", "Gvdiffsplit", "Gedit", "Gsplit",

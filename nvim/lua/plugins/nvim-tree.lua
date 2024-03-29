@@ -1,8 +1,7 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
-  lazy = true,
-  cmd = {
-    "NvimTreeToggle", "NvimTreeOpen"
+  dependencies = {
+    "nvim-tree/nvim-web-devicons"
   }
 }
 

@@ -32,7 +32,7 @@ function M.config()
       "lua_ls",
       "jsonls",
       "yamlls",
-      "texlab"
+      "texlab",
     }
   }
 

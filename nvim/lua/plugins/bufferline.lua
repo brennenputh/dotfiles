@@ -27,7 +27,7 @@ function M.config()
           text_align = "left",
         }
       },
-      separator_style = "slant",            -- | "thick" | "thin" | { 'any', 'any' },
+      separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
       diagnostics = "nvim_lsp",
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
         local icon = level:match("error") and " " or " "

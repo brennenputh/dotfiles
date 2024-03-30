@@ -32,9 +32,6 @@ keymap("n", "<C-j>", "<cmd>wincmd j<CR>")
 keymap("n", "<C-k>", "<cmd>wincmd k<CR>")
 keymap("n", "<C-l>", "<cmd>wincmd l<CR>")
 
--- Indent File
-keymap("n", "<leader>I", "gg=G", { desc = "Indent File" })
-
 --[[ VISUAL MODE ]]--
 
 -- Stay in indent mode
@@ -68,6 +65,9 @@ keymap("n", "<leader>td", ":TroubleToggle document_diagnostics<CR>", { desc = 'D
 keymap("n", "<leader>tq", ":TroubleToggle quickfix<CR>", { desc = 'Quickfix' })
 keymap("n", "<leader>tl", ":TroubleToggle loclist<CR>", { desc = 'LOCList' })
 keymap("n", "<leader>tr", ":TroubleToggle lsp_references<CR>", { desc = 'LSP References' })
+
+-- Conform (Formatting)
+keymap("n", "<leader>I", "<cmd>lua require'conform'.format({async = true, lsp_fallback = true})<CR>", { desc = 'Format File' })
 
 -- LSP
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = 'Format Code' })

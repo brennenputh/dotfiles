@@ -5,7 +5,7 @@ local M = {
     "nvim-neotest/nvim-nio",
     "williamboman/mason.nvim",
   },
-  lazy = false
+  lazy = true
 }
 
 function M.config()

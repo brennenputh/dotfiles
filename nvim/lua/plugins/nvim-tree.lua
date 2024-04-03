@@ -80,6 +80,7 @@ function M.config()
     on_attach = my_on_attach;
 
     renderer = {
+      group_empty = true,
       icons = {
         glyphs = {
           default = "",

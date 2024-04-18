@@ -100,3 +100,11 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", { desc = 'T
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = 'Run Last' })
 keymap("n", "<leader>du", dap_toggle, { desc = 'Toggle UI' })
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", { desc = 'Terminate' })
+
+-- Git
+
+keymap("n", "<leader>ga", "<cmd>Git add .<cr>", { desc = 'Git Add All' })
+keymap("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = 'Git Commit' })
+keymap("n", "<leader>gp", "<cmd>Git push<cr>", { desc = 'Git Push' })
+keymap("n", "<leader>gs", "<cmd>Git status<cr>", { desc = 'Git Status' })
+keymap("n", "<leader>gg", "<cmd>Flogsplit<cr>", { desc = 'Git Graph' })

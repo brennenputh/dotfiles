@@ -3,3 +3,5 @@ if status is-interactive
 end
 
 set -g fish_greeting ''
+
+oh-my-posh init fish --config "/home/bagatelle/.config/fish/themes/catppuccin_macchiato.omp.json" | source

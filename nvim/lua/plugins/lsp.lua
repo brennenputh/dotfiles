@@ -33,7 +33,7 @@ function M.config()
 			"jsonls",
 			"yamlls",
 			"texlab",
-			"jdtls",
+			"jdtls"
 		},
 	})
 
@@ -88,6 +88,8 @@ function M.config()
 	lspconfig.texlab.setup({})
 
 	lspconfig.jdtls.setup({})
+
+  lspconfig.harper_ls.setup({})
 end
 
 return M

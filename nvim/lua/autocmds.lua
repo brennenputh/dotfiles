@@ -1,12 +1,3 @@
-vim.api.nvim_create_autocmd("VimEnter", {
-  desc = "Open telescope when nvim is started with no arguments.",
-  callback = function()
-    if vim.fn.argv(0) == "" then
-      require("telescope.builtin").find_files()
-    end
-  end,
-})
-
 vim.api.nvim_create_autocmd('ModeChanged', {
   desc = "Makes it so snippets don't mess up tab",
   pattern = '*',

@@ -1,6 +1,7 @@
 local M = {
 	"mfussenegger/nvim-jdtls",
-	lazy = false,
+  lazy = true,
+  ft = { "java" },
 	dependencies = {
 		"neovim/nvim-lspconfig",
 	},

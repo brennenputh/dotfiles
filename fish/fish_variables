@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ANDROID_HOME:/home/bagatelle/\x2eandroid/
 SETUVAR --export EDITOR:nvim
+SETUVAR --export NDK_HOME:/home/bagatelle/\x2eandroid/ndk\x2dbundle/
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:969896
 SETUVAR fish_color_cancel:\x2dr

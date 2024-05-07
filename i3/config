@@ -50,7 +50,7 @@ bindsym XF86AudioPause exec sp play
 bindsym XF86AudioStop exec sp pause
 # }}}
 
-#: Keybinds
+#: Keybinds {{{
 #: Applications & Windows {{{
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -62,7 +62,7 @@ bindsym $mod+Shift+q kill
 bindsym Print exec "maim -s -u -D -q | xclip -selection clipboard -t image/png"
 
 # Rofi
-bindsym $mod+x exec rofi -show drun -modi drun
+bindsym $mod+x exec ~/.config/rofi/launchers/type-4/launcher.sh
 
 # change focus
 bindsym $mod+h focus left

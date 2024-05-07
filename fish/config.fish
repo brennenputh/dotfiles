@@ -4,4 +4,4 @@ end
 
 set -g fish_greeting ''
 
-oh-my-posh init fish --config "/home/bagatelle/.config/fish/themes/catppuccin_macchiato.omp.json" | source
+oh-my-posh init fish --config "$HOME/.config/fish/themes/catppuccin_macchiato.omp.json" | source

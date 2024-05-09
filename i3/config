@@ -14,26 +14,45 @@ font pango:DejaVu Sans Mono 8
 
 #: Autostart {{{
 # Use monitors in correct orientation
-exec_always autorandr -c
+exec_always --no-startup-id autorandr -c
 
 # Background
-exec_always feh --bg-fill ~/.config/i3/batman_logo_wallpaper.jpg
+exec_always --no-startup-id bash -c "sleep 2; feh --bg-fill ~/.config/i3/batman_logo_wallpaper.jpg"
 
 # Polybar
-exec_always ~/.config/polybar/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/launch.sh 
 
 # Picom 
-exec_always picom
+exec_always --no-startup-id picom
 
 # Dunst Notification Manager
-exec_always dunst
+exec_always --no-startup-id dunst
 
 # Map caps lock to escape
-exec_always xmodmap -e "clear lock" #disable caps lock switch
-exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+exec_always --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
+exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # Bluetooth Agent
-exec_always bt-agent --capability=NoInputNoOutput
+exec_always --no-startup-id bt-agent --capability=NoInputNoOutput
+# }}}
+
+#: Workspaces {{{
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+workspace $ws1 output "DP-4"
+workspace $ws3 output "DP-2"
+
 # }}}
 
 #: Audio {{{
@@ -84,19 +103,6 @@ bindsym Pause exec "i3lock-fancy-multimonitor -b=0x12 -n -p"
 # }}}
 
 #: Workspaces {{{
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -130,7 +136,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # }}}
-
+# }}}
 
 #: Window Decorations And Gaps {{{
 # Remove titlebars

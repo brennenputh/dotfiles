@@ -9,4 +9,5 @@
 !dunst/
 !polybar/
 !fish/
+fish/conf.d/rustup.fish
 !README.md

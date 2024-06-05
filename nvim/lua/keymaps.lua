@@ -79,6 +79,9 @@ keymap(
 	{ desc = "Format File" }
 )
 
+-- md-pdf
+keymap("n", "<leader>cm", "<cmd>lua require'md-pdf'.convert_md_to_pdf()<cr>", { desc = "Convert Markdown into PDF" })
+
 -- LSP
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format Code" })
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to Declaration" })

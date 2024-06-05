@@ -20,9 +20,6 @@ local M = {
 		{
 			"L3MON4D3/LuaSnip",
 			event = "InsertEnter",
-			dependencies = {
-				"rafamadriz/friendly-snippets",
-			},
 		},
 		{
 			"hrsh7th/cmp-nvim-lua",
@@ -37,7 +34,6 @@ local M = {
 function M.config()
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
-	require("luasnip/loaders/from_vscode").lazy_load()
 
 	local kind_icons = {
 		Text = "󰉿",

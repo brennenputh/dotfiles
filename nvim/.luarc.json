@@ -1,0 +1,7 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "get_os",
+        "detect_is_wsl"
+    ]
+}

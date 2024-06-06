@@ -8,6 +8,7 @@
 !picom.conf
 !dunst/
 !polybar/
+!scripts/
 !fish/
 fish/conf.d/rustup.fish
 !README.md

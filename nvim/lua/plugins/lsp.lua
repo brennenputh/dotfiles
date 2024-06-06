@@ -33,7 +33,8 @@ function M.config()
 			"jsonls",
 			"yamlls",
 			"texlab",
-      "jdtls"
+      "jdtls",
+      "markdown_oxide"
 		},
 	})
 
@@ -86,6 +87,18 @@ function M.config()
 	lspconfig.yamlls.setup({})
 
 	lspconfig.texlab.setup({})
+
+  local mo_capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+  capabilities.workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+  }
+
+  lspconfig.markdown_oxide.setup({
+    capabilities = mo_capabilities
+  })
 end
 
 return M

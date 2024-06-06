@@ -33,7 +33,7 @@ function M.config()
 		detection_methods = { "pattern" },
 
 		-- patterns used to detect root dir, when **"pattern"** is in detection_methods
-		patterns = { ".git", "Makefile", "package.json", "build.gradle" },
+		patterns = { ".git", "Makefile", "package.json", "build.gradle", ".obsidian" },
 	})
 
 	local telescope = require("telescope")

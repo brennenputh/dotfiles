@@ -1,7 +1,6 @@
 local ls = require "luasnip"
 
 local languages = {
-  "lua"
 }
 
 for _, lang in ipairs(languages) do

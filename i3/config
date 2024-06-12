@@ -143,12 +143,6 @@ for_window [class=".*"] border pixel 1
 # Hide edge borders
 hide_edge_borders smart_no_gaps
 
-# i3-gaps
-smart_gaps on
-
-gaps inner 5
-gaps outer 3
-
 # Something to fix a specific game
 for_window [title="^Origin$"] floating enable, fullscreen disable
 # }}}

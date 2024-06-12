@@ -10,5 +10,6 @@
 !polybar/
 !scripts/
 !fish/
+!rofi/
 fish/conf.d/rustup.fish
 !README.md

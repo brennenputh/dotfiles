@@ -15,7 +15,7 @@ font pango:DejaVu Sans Mono 8
 #: Autostart {{{
 
 # Background
-exec_always --no-startup-id bash -c "sleep 2; feh --bg-fill ~/.config/i3/batman_logo_wallpaper.jpg"
+exec_always --no-startup-id bash -c "sleep 2; feh --bg-fill ~/.config/i3/arch_gray_logo.png"
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 

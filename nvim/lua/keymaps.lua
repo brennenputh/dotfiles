@@ -77,9 +77,32 @@ keymap("n", "<leader>I", function()
 end, { desc = "Format File" })
 
 -- md-pdf
-keymap("n", "<leader>cm", function()
+keymap("n", "<leader>mm", function()
 	require("md-pdf").convert_md_to_pdf()
 end, { desc = "Convert Markdown into PDF" })
+
+-- nvim-chainsaw
+keymap("n", "<leader>cv", function()
+	require("chainsaw").variableLog()
+end, { desc = "Log Variable" })
+keymap("n", "<leader>co", function()
+	require("chainsaw").objectLog()
+end, { desc = "Log Object" })
+keymap("n", "<leader>cs", function()
+	require("chainsaw").stacktraceLog()
+end, { desc = "Log Stacktrace of Call" })
+keymap("n", "<leader>cb", function()
+	require("chainsaw").beepLog()
+end, { desc = "Minimal Beep Log" })
+keymap("n", "<leader>ct", function()
+	require("chainsaw").timeLog()
+end, { desc = "Log Time Duration" })
+keymap("n", "<leader>cd", function()
+	require("chainsaw").debugLog()
+end, { desc = "Add Debug Statement" })
+keymap("n", "<leader>cr", function()
+	require("chainsaw").removeLogs()
+end, { desc = "Remove Chainsaw Logs" })
 
 -- LSP
 keymap("n", "<leader>lf", function()
@@ -157,7 +180,7 @@ end, { desc = "Terminate" })
 
 -- Git
 
-keymap("n", "<leader>ga", "<cmd>Git add .<cr>", { desc = "Git add "})
+keymap("n", "<leader>ga", "<cmd>Git add .<cr>", { desc = "Git add " })
 keymap("n", "<leader>gc", function()
 	require("tinygit").smartCommit()
 end, { desc = "Git Smart Commit" })

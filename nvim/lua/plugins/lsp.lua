@@ -34,7 +34,8 @@ function M.config()
 			"yamlls",
 			"texlab",
       "jdtls",
-      "markdown_oxide"
+      "markdown_oxide",
+      "openscad_lsp"
 		},
 	})
 
@@ -99,6 +100,8 @@ function M.config()
   lspconfig.markdown_oxide.setup({
     capabilities = mo_capabilities
   })
+
+  lspconfig.openscad_lsp.setup({})
 end
 
 return M

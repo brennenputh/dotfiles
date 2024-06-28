@@ -9,7 +9,8 @@
 !dunst/
 !polybar/
 !scripts/
-!fish/
 !rofi/
+!fish/
 fish/conf.d/rustup.fish
+fish/completions/
 !README.md

@@ -1,7 +1,7 @@
 /*
 /*/
 !nvim/
-!neofetch/
+!fastfetch/
 !htop/
 !kitty/
 !i3/
@@ -14,3 +14,4 @@
 fish/conf.d/rustup.fish
 fish/completions/
 !README.md
+!install.py

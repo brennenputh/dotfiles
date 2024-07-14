@@ -64,12 +64,8 @@ end
 keymap("n", "<leader>e", tree_toggle, { desc = "Nvim Tree" })
 
 -- Trouble
-keymap("n", "<leader>tt", ":TroubleToggle<CR>", { desc = "Toggle Trouble" })
-keymap("n", "<leader>tw", ":TroubleToggle workspace_diagnostics<CR>", { desc = "Workspace Diagnostics" })
-keymap("n", "<leader>td", ":TroubleToggle document_diagnostics<CR>", { desc = "Document Diagnostics" })
-keymap("n", "<leader>tq", ":TroubleToggle quickfix<CR>", { desc = "Quickfix" })
-keymap("n", "<leader>tl", ":TroubleToggle loclist<CR>", { desc = "LOCList" })
-keymap("n", "<leader>tr", ":TroubleToggle lsp_references<CR>", { desc = "LSP References" })
+keymap("n", "<leader>tt", function () require("trouble").toggle("diagnostics") end, { desc = "Trouble Diagnostics" })
+keymap("n", "<leader>tl", function () require("trouble").toggle("lsp") end, { desc = "Trouble LSP" })
 
 -- Conform (Formatting)
 keymap("n", "<leader>I", function()

@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export ANDROID_HOME:/home/bagatelle/\x2eandroid/
+SETUVAR --export ANDROID_HOME:/home/bputh/\x2eandroid
 SETUVAR --export EDITOR:nvim
 SETUVAR --export NDK_HOME:/home/bagatelle/\x2eandroid/ndk\x2dbundle/
 SETUVAR __fish_initialized:3400

@@ -9,14 +9,7 @@ local M = {
 }
 
 function M.config()
-	local wk = require("which-key")
-	wk.setup({})
-	wk.register({
-		f = {
-			name = "telescope",
-		},
-		{ prefix = "<leader>" },
-	})
+  require("which-key").setup({})
 end
 
 return M

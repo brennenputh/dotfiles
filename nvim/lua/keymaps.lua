@@ -7,8 +7,11 @@ local function keymap(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, options)
 end
 
+local function wk_add(lead_keystroke, group_name)
+  require("which-key").add({ lead_keystroke, group = group_name })
+end
+
 keymap("", "<Space>", "<Nop>")
-vim.g.mapleader = " "
 
 --[[ NORMAL MODE ]]
 --
@@ -36,7 +39,6 @@ keymap("n", "<C-k>", "<cmd>wincmd k<CR>")
 keymap("n", "<C-l>", "<cmd>wincmd l<CR>")
 
 --[[ VISUAL MODE ]]
---
 
 -- Stay in indent mode
 keymap("v", "<", "<gv")
@@ -49,6 +51,7 @@ keymap("v", "p", "P")
 --
 
 -- Telescope
+wk_add("<leader>f", "Telescope")
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find Files" })
 keymap("n", "<leader>fr", ":Telescope live_grep<CR>", { desc = "Ripgrep" })
 keymap("n", "<leader>fp", ":Telescope projects<CR>", { desc = "Project Select" })
@@ -64,6 +67,7 @@ end
 keymap("n", "<leader>e", tree_toggle, { desc = "Nvim Tree" })
 
 -- Trouble
+wk_add("<leader>t", "Trouble")
 keymap("n", "<leader>tt", function () require("trouble").toggle("diagnostics") end, { desc = "Trouble Diagnostics" })
 keymap("n", "<leader>tl", function () require("trouble").toggle("lsp") end, { desc = "Trouble LSP" })
 
@@ -78,6 +82,7 @@ keymap("n", "<leader>mm", function()
 end, { desc = "Convert Markdown into PDF" })
 
 -- nvim-chainsaw
+wk_add("<leader>c", "Chainsaw")
 keymap("n", "<leader>cv", function()
 	require("chainsaw").variableLog()
 end, { desc = "Log Variable" })
@@ -101,6 +106,7 @@ keymap("n", "<leader>cr", function()
 end, { desc = "Remove Chainsaw Logs" })
 
 -- LSP
+wk_add("<leader>l", "LSP")
 keymap("n", "<leader>lf", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format Code" })
@@ -148,6 +154,7 @@ local function dap_toggle()
 end
 
 -- DAP
+wk_add("<leader>d", "Debugger")
 keymap("n", "<leader>db", function()
 	require("dap").toggle_breakpoint()
 end, { desc = "Toggle Breakpoint" })
@@ -176,7 +183,10 @@ end, { desc = "Terminate" })
 
 -- Git
 
-keymap("n", "<leader>ga", "<cmd>Git add .<cr>", { desc = "Git add " })
+wk_add("<leader>g", "Git")
+keymap("n", "<leader>ga", function()
+  require("tinygit").interactiveStaging()
+end, { desc = "Git Interactive Add" })
 keymap("n", "<leader>gc", function()
 	require("tinygit").smartCommit()
 end, { desc = "Git Smart Commit" })
@@ -188,4 +198,4 @@ keymap("n", "<leader>gs", "<cmd>Git status<cr>", { desc = "Git Status" })
 keymap("n", "<leader>gd", function()
 	require("tinygit").searchFileHistory()
 end, { desc = "Git File History" })
-keymap("n", "<leader>gg", "<cmd>Flogsplit<cr>", { desc = "Git Graph" })
+keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git Blame" })

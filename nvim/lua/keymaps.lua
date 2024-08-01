@@ -50,13 +50,11 @@ keymap("v", ">", ">gv")
 keymap("v", "p", "P")
 
 --[[ PLUGINS ]]
---
 
 -- Telescope
 wk_add("<leader>f", "Telescope")
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find Files" })
 keymap("n", "<leader>fr", ":Telescope live_grep<CR>", { desc = "Ripgrep" })
-keymap("n", "<leader>fp", ":Telescope projects<CR>", { desc = "Project Select" })
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffer Select" })
 
 -- Close dap when nvim tree opens

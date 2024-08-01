@@ -11,3 +11,11 @@ vim.api.nvim_create_autocmd("ModeChanged", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  desc = "Change root directory when switching buffers",
+	callback = function(ctx)
+		local root = vim.fs.root(ctx.buf, {".git", "Makefile"})
+		if root then vim.uv.chdir(root) end
+	end,
+})

@@ -14,7 +14,6 @@ end
 keymap("", "<Space>", "<Nop>")
 
 --[[ NORMAL MODE ]]
---
 
 -- Register Preservation for dd
 vim.keymap.set("n", "dd", function()
@@ -23,6 +22,9 @@ vim.keymap.set("n", "dd", function()
 	end
 	return "dd"
 end, { expr = true })
+
+-- Register preservation for x
+vim.keymap.set("n", "x", "_x")
 
 -- Navigate Buffers
 keymap("n", "<S-l>", ":bnext<CR>")

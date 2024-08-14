@@ -28,7 +28,7 @@ function M.config()
 			lualine_b = { "branch", "diff", "diagnostics" },
 			lualine_c = { "filename" },
 			lualine_x = { "encoding", "fileformat", "filetype" },
-			lualine_y = { "progress" },
+			lualine_y = { require("tinygit.statusline").blame },
 			lualine_z = { "location" },
 		},
 		inactive_sections = {

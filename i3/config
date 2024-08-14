@@ -14,6 +14,9 @@ font pango:DejaVu Sans Mono 8
 
 #: Autostart {{{
 
+# Set monitor layout
+exec_always ~/.screenlayout/triple-monitor.sh
+
 # Background
 exec_always --no-startup-id bash -c "sleep 2; feh --bg-fill ~/.config/i3/arch_gray_logo.png"
 

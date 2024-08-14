@@ -1,4 +1,7 @@
 require("options")
-require("keymaps")
+
+vim.g.mapleader = " "
 require("Lazy")
+
+require("keymaps")
 require("autocmds")

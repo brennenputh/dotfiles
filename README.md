@@ -3,7 +3,7 @@
 My collection of dotfiles.
 
 ## Installation Script
-Install by using the `./scripts/install.sh` script.
+Install by using the `./scripts/install.py` script.
 Note that this only installs software required for the config to run based on the configurations I regularly use.
 Other configurations will require manual installation.
 
@@ -13,12 +13,18 @@ Other configurations will require manual installation.
 
 fish
 Neovim
-neofetch
+fastfetch
 htop
 
 ### GUI
 
 dunst
 i3
+playerctl
+maim
+i3lock-fancy-multimonitor
+feh
+rofi
 kitty
 polybar
+picom

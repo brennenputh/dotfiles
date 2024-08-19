@@ -20,4 +20,8 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-
+# school-related functions
+function "in data-structures"
+  cd $WINHOME/Obsidian Vault/School/Data-Structures/
+  nvim (date -Idate)
+end

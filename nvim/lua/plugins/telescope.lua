@@ -8,11 +8,7 @@ local M = {
 		{
 			"nvim-lua/plenary.nvim",
 			lazy = true,
-		},
-		{
-			"ahmedkhalf/project.nvim",
-			commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
-		},
+    },
 	},
 }
 
@@ -26,18 +22,6 @@ M.opts = {
 }
 
 function M.config()
-	local project = require("project_nvim")
-	project.setup({
-
-		-- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
-		detection_methods = { "pattern" },
-
-		-- patterns used to detect root dir, when **"pattern"** is in detection_methods
-		patterns = { ".git", "Makefile", "package.json", "build.gradle", ".obsidian" },
-	})
-
-	local telescope = require("telescope")
-	telescope.load_extension("projects")
 end
 
 return M

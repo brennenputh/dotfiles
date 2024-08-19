@@ -24,7 +24,7 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- Register preservation for x
-vim.keymap.set("n", "x", "_x")
+vim.keymap.set("n", "x", "\"_x")
 
 -- Navigate Buffers
 keymap("n", "<S-l>", ":bnext<CR>")

@@ -21,7 +21,20 @@ end
 # pnpm end
 
 # school-related functions
-function "in data-structures"
-  cd $WINHOME/Obsidian Vault/School/Data-Structures/
-  nvim (date -Idate)
+function in-data-structures
+  cd $WINHOME/Obsidian\ Vault/School/Data-Structures/
+  wsl-open 'obsidian://open?vault=Obsidian%20Vault' &
+  nvim School/Data-Structures/Data-Structures-(date -Idate).md
+end
+
+function in-cyber-def
+  cd $WINHOME/Obsidian\ Vault/School/Cyber-Defense/
+  wsl-open 'obsidian://open?vault=Obsidian%20Vault' &
+  nvim School/Data-Structures/Cyber-Defense-(date -Idate).md
+end
+
+function in-pls
+  cd $WINHOME/Obsidian\ Vault/School/PLS/
+  wsl-open 'obsidian://open?vault=Obsidian%20Vault' &
+  nvim School/Data-Structures/PLS-(date -Idate).md
 end

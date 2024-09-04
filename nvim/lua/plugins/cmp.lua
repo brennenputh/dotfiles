@@ -111,7 +111,6 @@ function M.config()
 			},
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
-			{ name = "buffer" },
 			{ name = "path" },
 		},
 		sorting = {
@@ -137,6 +136,13 @@ function M.config()
 			ghost_text = true,
 		},
 	})
+
+  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+  local cmp = require('cmp')
+  cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+  )
 end
 
 return M

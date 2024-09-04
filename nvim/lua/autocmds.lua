@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- Source: https://github.com/chrisgrieser/.config/blob/1491919ae00343d1d29b4e4f9c2b82d329062a63/nvim/lua/config/autocmds.lua#L28-L46
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged", "BufLeave", "FocusLost" }, {
+vim.api.nvim_create_autocmd({ "InsertLeave", "BufLeave", "FocusLost" }, {
   desc = "Auto-save on relevant events.",
 	callback = function(ctx)
 		local bufnr = ctx.buf

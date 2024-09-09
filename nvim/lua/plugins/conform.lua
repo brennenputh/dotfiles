@@ -17,10 +17,14 @@ function M.config()
 			-- Scripting Languages
 			lua = { "stylua" },
 			python = { "black" },
+      bash = { "shfmt" },
+      sh = { "shfmt" },
+      fish = { "fish_indent" },
 
 			-- Web Languages
 			html = { "prettier" },
 			css = { "prettier" },
+      scss = { "prettier" },
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 
@@ -34,6 +38,7 @@ function M.config()
 
 			-- Data Languages
 			json = { "jq" },
+      markdown = { "prettier" }
 		},
 	})
 

@@ -27,7 +27,7 @@ function M.config()
 			"rust_analyzer",
 			"html",
 			"cssls",
-			"tsserver",
+			"ts_ls",
 			"pyright",
 			"lua_ls",
 			"jsonls",
@@ -50,7 +50,7 @@ function M.config()
 
 	lspconfig.html.setup({})
 	lspconfig.cssls.setup({})
-	lspconfig.tsserver.setup({})
+	lspconfig.ts_ls.setup({})
 
 	lspconfig.pyright.setup({
 		settings = {

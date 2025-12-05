@@ -1,0 +1,82 @@
+* {
+  font:   "Iosevka Nerd Font Medium 11";
+
+  bg0     : #1a1b26;
+  bg1     : #1f2335;
+  bg2     : #24283b;
+  bg3     : #414868;
+  fg0     : #c0caf5;
+  fg1     : #a9b1d6;
+  fg2     : #737aa2;
+  red     : #f7768e;
+  green   : #9ece6a;
+  yellow  : #e0af68;
+  blue    : #7aa2f7;
+  magenta : #9a7ecc;
+  cyan    : #4abaaf;
+
+  accent: @red;
+  urgent: @yellow;
+
+  background-color : @bg0;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+window {
+  width: 30%;
+  background-color: @bg1;
+}
+
+textbox {
+  background-color: @bg2;
+}
+
+entry {
+  placeholder: "";
+
+  background-color: @bg1;
+}
+
+element {
+  spacing: 7px;
+  padding: 3px;
+  background-color: inherit;
+}
+
+element normal normal, element alternate normal {
+  background-color: @bg1;
+  text-color: inherit;
+}
+
+element-text {
+  background-color: inherit;
+  text-color:       inherit;
+}
+
+element-icon {
+  background-color: inherit;
+}
+
+inputbar {
+  children: [entry];
+
+  background-color: @bg0;
+}
+
+entry {
+  text-color: @fg0;
+}
+
+scrollbar {
+  handle-color: @fg2;
+}
+
+error-message {
+  background-color: @bg0;
+  text-color: inherit;
+  margin: 10px;
+}

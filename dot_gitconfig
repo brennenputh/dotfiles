@@ -1,0 +1,30 @@
+[user]
+	email = brennenputh@gmail.com\n
+	name = brennenputh
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[core]
+	excludesfile = /home/bputh/.gitignore
+[alias]
+	graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+[branch]
+	sort = committerdate
+[column]
+	ui = auto
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+	memonicPrefix = true
+	mnemonicPrefix = true
+[push]
+	autoSetupRemote = true
+	followTags = true
+[commit]
+	verbose = true
+[merge]
+	conflictstyle = zdiff3

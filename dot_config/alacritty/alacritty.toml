@@ -3,7 +3,7 @@ decorations = "None"
 
 [font]
 size = 10.25
-normal = {family = "Fira Code", style = "Regular"}
+normal = {family = "Fira Code Nerd Font Mono", style = "Regular"}
 
 [mouse]
 hide_when_typing = true

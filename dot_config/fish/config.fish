@@ -27,6 +27,8 @@ if type -q brew
     end
 end
 
+set -gx EDITOR nvim
+
 # pnpm
 set -gx PNPM_HOME "/home/bputh/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH

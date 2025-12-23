@@ -1,0 +1,15 @@
+{
+  "powerUsagePlugin": {
+    "enabled": true
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "displayMirror": {
+    "enabled": true
+  }
+}

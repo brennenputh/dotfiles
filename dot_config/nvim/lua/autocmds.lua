@@ -51,28 +51,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.breakindent = true
 	end,
 })
-
--- Don't Display Line Numbers On Small Windows
-
-local set_numbers = function(value, window)
-	vim.api.nvim_set_option_value("number", value, { win = window })
-end
-local window_size_threshold = 40
-
-vim.api.nvim_create_autocmd("WinResized", {
-	callback = function(ctx)
-		local bufnr = ctx.buf
-		local bo = vim.bo[bufnr]
-		if bo.buftype ~= "" or bo.ft == "gitcommit" or bo.buftype == "terminal" or bo.bt ~= "" or bo.readonly then
-			return
-		end
-		for _, win in ipairs(vim.api.nvim_list_wins()) do
-			local width = vim.api.nvim_win_get_width(win)
-			if width < window_size_threshold then
-				set_numbers(false, win)
-			else
-				set_numbers(true, win)
-			end
-		end
-	end,
-})

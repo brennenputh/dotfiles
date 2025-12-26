@@ -218,42 +218,17 @@ keymap("n", "<leader>gu", "<cmd>Git pull<cr>", { desc = "Git Pull" })
 keymap("n", "<leader>gs", "<cmd>Git status<cr>", { desc = "Git Status" })
 keymap("n", "<leader>gs", "<cmd>Git diff<cr>", { desc = "Git Diff" })
 keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git Blame" })
+
+local Terminal = require("toggleterm.terminal").Terminal
+local git_graph = Terminal:new({
+  display_name = "Git Graph",
+	cmd = "git graph",
+	hidden = true,
+  direction = "vertical"
+})
+
 keymap("n", "<leader>gr", function()
-	local width = 80
-
-	vim.cmd("botright vsplit")
-	vim.cmd("terminal git graph")
-
-	local buf = vim.api.nvim_get_current_buf()
-
-	vim.bo[buf].buflisted = false
-
-	-- Auto-close when you leave this window
-	vim.api.nvim_create_autocmd("WinLeave", {
-		buffer = buf,
-		once = true, -- ensures it only triggers once
-		callback = function()
-			-- Make sure window still exists before closing
-			local win = vim.fn.bufwinid(buf)
-			if win ~= -1 then
-				vim.api.nvim_win_close(win, true)
-			end
-		end,
-	})
-
-	vim.cmd("startinsert")
-	vim.cmd("vertical resize " .. width)
-
-	vim.api.nvim_create_autocmd("TermClose", {
-		buffer = buf,
-		once = true,
-		callback = function()
-			local win = vim.fn.bufwinid(buf)
-			if win ~= -1 then
-				vim.api.nvim_win_close(win, true)
-			end
-		end,
-	})
+  git_graph:toggle()
 end, { desc = "Git Graph" })
 
 wk_add("<leader>gg", "GitHub")

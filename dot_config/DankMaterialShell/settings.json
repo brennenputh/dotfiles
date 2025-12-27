@@ -423,5 +423,6 @@
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
-  "configVersion": 3
+  "configVersion": 4,
+  "desktopWidgetInstances": []
 }

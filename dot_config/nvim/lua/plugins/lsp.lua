@@ -22,7 +22,6 @@ local M = {
 			ensure_installed = {
 				"bashls",
 				"clangd",
-				"cmake",
 				"cssls",
 				"superhtml",
 				"jdtls",

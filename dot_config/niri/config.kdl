@@ -569,3 +569,5 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
  
+
+include "dms/outputs.kdl"

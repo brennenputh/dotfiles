@@ -21,9 +21,10 @@ local M = {
 			direction = "float",
 			close_on_exit = true,
 			shell = "fish",
-      float_opts = {
-        border = "curved"
-      }
+			autochdir = true,
+			float_opts = {
+				border = "curved",
+			},
 		})
 	end,
 }

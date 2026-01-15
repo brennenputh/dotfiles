@@ -8,7 +8,7 @@ local M = {
 			flavour = "mocha", -- latte, frappe, macchiato, mocha
 			-- flavour = "auto" -- will respect terminal's background
 			background = { -- :h background
-				light = "latte",
+				light = "mocha",
 				dark = "mocha",
 			},
 			transparent_background = false, -- disables setting the background color.

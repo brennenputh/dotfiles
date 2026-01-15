@@ -1,5 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
+  lazy = false,
 	branch = "main",
 	dependencies = {
 		"cathaysia/tree-sitter-asciidoc",
@@ -9,7 +10,7 @@ local M = {
 		local treesitter = require("nvim-treesitter")
 
 		treesitter.setup({})
-		treesitter.install({ "stable" })
+		treesitter.install({ "unstable" })
 	end,
 }
 

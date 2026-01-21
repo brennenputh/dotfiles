@@ -23,7 +23,6 @@ local M = {
 				"bashls",
 				"clangd",
 				"cssls",
-				"superhtml",
 				"jdtls",
 				"jsonls",
 				"lua_ls",

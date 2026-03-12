@@ -4,11 +4,12 @@ local M = {
 	dependencies = {
 		{
 			"hrsh7th/cmp-nvim-lsp",
-      --"pest-parser/pest.vim",
+			--"pest-parser/pest.vim",
 			{
 				"williamboman/mason.nvim",
 				lazy = false,
 			},
+			"neovim/nvim-lspconfig",
 		},
 	},
 	config = function()
@@ -32,13 +33,14 @@ local M = {
 				"pyright",
 				"rust_analyzer",
 				"texlab",
-				"ts_ls",
+				"vtsls",
 				"vue_ls",
 				"yamlls",
 			},
 			automatic_enable = {
 				exclude = {
 					"pest_ls",
+					"vue_ls",
 				},
 			},
 		})
@@ -95,6 +97,30 @@ local M = {
 					fmt_style = "Google",
 				},
 			},
+		})
+
+		local vue_language_server_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/"
+		local vue_plugin = {
+			name = "@vue/typescript-plugin",
+			location = vue_language_server_path,
+			languages = { "vue" },
+			configNamespace = "typescript",
+			enableForWorkspaceTypeScriptVersions = true,
+		}
+		vim.lsp.config("vtsls", {
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			settings = {
+				vtsls = {
+					tsserver = {
+						globalPlugins = {
+							vue_plugin,
+						},
+					},
+				},
+			},
+			on_attach = function()
+				vim.lsp.enable("vue_ls")
+			end,
 		})
 	end,
 }

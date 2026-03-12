@@ -4,10 +4,8 @@ local M = {
 	event = "Bufenter",
 	cmd = { "Telescope" },
 	dependencies = {
-		{
-			"nvim-lua/plenary.nvim",
-			lazy = true,
-		},
+		{ "nvim-lua/plenary.nvim", lazy = true },
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	opts = {
 		defaults = {

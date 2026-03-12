@@ -1,0 +1,17 @@
+{
+  "id": "timeUntil",
+  "name": "Time Until",
+  "description": "Display remaining time until a chosen date in the bar.",
+  "version": "1.0.1",
+  "author": "fdmarcin",
+  "icon": "schedule",
+  "type": "widget",
+  "capabilities": ["dankbar-widget"],
+  "component": "./TimeUntilWidget.qml",
+  "settings": "./TimeUntilSettings.qml",
+  "permissions": [
+    "settings_read",
+    "settings_write"
+  ],
+  "requires_dms": ">=1.0.0"
+}

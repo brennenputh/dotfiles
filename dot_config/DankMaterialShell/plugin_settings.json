@@ -11,5 +11,10 @@
   },
   "displayMirror": {
     "enabled": true
+  },
+  "timeUntil": {
+    "enabled": true,
+    "targetTimestamp": "2026-03-12 05:00",
+    "unit": "days"
   }
 }

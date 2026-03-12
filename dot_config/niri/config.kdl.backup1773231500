@@ -573,5 +573,3 @@ binds {
 include "dms/outputs.kdl"
 
 include "dms/windowrules.kdl"
-
-include "dms/cursor.kdl"

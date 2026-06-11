@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 
 		if not pcall(vim.treesitter.start) then
-			vim.notify("No treesitter parser installed for this filetype.")
+      return
 		end
 	end,
 })

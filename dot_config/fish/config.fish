@@ -30,3 +30,5 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+set -gx LD_LIBRARY_PATH "$(brew --prefix)/lib" "$LD_LIBRARY_PATH"

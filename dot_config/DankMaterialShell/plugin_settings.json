@@ -16,5 +16,16 @@
     "enabled": true,
     "targetTimestamp": "2026-03-12 05:00",
     "unit": "days"
+  },
+  "dms-chucks": {
+    "enabled": true
+  },
+  "myPlugin": {
+    "displayText": "Text"
+  },
+  "dmsChucks": {
+    "enabled": true,
+    "isEnabled": false,
+    "clickCount": 8
   }
 }

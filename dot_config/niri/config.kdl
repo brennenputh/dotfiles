@@ -568,8 +568,16 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
- 
 
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+
+    background-effect {
+        xray false
+    }
+}
+ 
 include "dms/outputs.kdl"
 
 include "dms/windowrules.kdl"

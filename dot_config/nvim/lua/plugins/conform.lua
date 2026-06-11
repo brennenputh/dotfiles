@@ -14,7 +14,7 @@ local M = {
 			formatters_by_ft = {
 				-- Scripting Languages
 				lua = { "stylua" },
-				python = { "black" },
+				python = { "ruff_format", "ruff_optimize_imports", "ruff_fix" },
 				bash = { "shfmt" },
 				sh = { "shfmt" },
 				fish = { "fish_indent" },
@@ -25,10 +25,16 @@ local M = {
 				scss = { "prettier" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+        php = { "pretty-php" },
+        xml = { "xmllint" },
 
 				-- Compiled Languages
 				rust = { "rustfmt" },
 				cpp = { "clang-format" },
+        cmake = { "cmake_format" },
+        zig = { "zigfmt" },
 
 				-- JVM Languages
 				java = { "google-java-format" },
@@ -38,6 +44,11 @@ local M = {
 				json = { "jq" },
 				markdown = { "prettier" },
 				yaml = { "yamlfix" },
+        just = { "just" },
+        latex = { "latexindent" },
+
+        -- Databases
+        sql = { "sqruff" },
 			},
 		})
 

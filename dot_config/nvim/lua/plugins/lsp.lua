@@ -33,9 +33,11 @@ local M = {
 				"pyright",
 				"rust_analyzer",
 				"texlab",
-				"vtsls",
 				"vue_ls",
+        "ts_ls",
 				"yamlls",
+        "psalm",
+        "qmlls"
 			},
 			automatic_enable = {
 				exclude = {
@@ -122,6 +124,8 @@ local M = {
 				vim.lsp.enable("vue_ls")
 			end,
 		})
+
+
 	end,
 }
 

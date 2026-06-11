@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export ANDROID_HOME:/home/bagatelle/\x2eandroid/
 SETUVAR --export EDITOR:nvim
+SETUVAR --path LD_LIBRARY_PATH:\x1d
 SETUVAR --export NDK_HOME:/home/bagatelle/\x2eandroid/ndk\x2dbundle/
 SETUVAR --export WINHOME:/mnt/c/Users/brenn/
 SETUVAR __done_min_cmd_duration:10000

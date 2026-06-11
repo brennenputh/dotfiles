@@ -104,6 +104,20 @@ end
 -- nvim-tree
 keymap("n", "<leader>e", tree_toggle, { desc = "Nvim Tree" })
 
+-- outline.nvim
+keymap("n", "<leader>o", function()
+	local outline = require("outline")
+	if outline.is_open() then
+		if outline.has_focus() then
+			outline.close()
+		else
+      outline.focus_outline()
+		end
+  else
+    outline.open()
+	end
+end, { desc = "Outline View" })
+
 -- nvim-chainsaw
 wk_add("<leader>c", "Chainsaw")
 keymap("n", "<leader>cv", function()
@@ -221,14 +235,14 @@ keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git Blame" })
 
 local Terminal = require("toggleterm.terminal").Terminal
 local git_graph = Terminal:new({
-  display_name = "Git Graph",
+	display_name = "Git Graph",
 	cmd = "git graph",
 	hidden = true,
-  direction = "vertical"
+	direction = "vertical",
 })
 
 keymap("n", "<leader>gr", function()
-  git_graph:toggle()
+	git_graph:toggle()
 end, { desc = "Git Graph" })
 
 wk_add("<leader>gg", "GitHub")

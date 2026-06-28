@@ -6,11 +6,19 @@ if status is-interactive
 end
 
 set -g fish_greeting ''
-
-starship init fish | source
-zoxide init fish | source
-
 fish_add_path -g ~/.local/bin/
+
+if type -q starship
+    starship init fish | source
+else
+    echo "Unable to find starship executable, fancy prompt unavailable."
+end
+
+if type -q zoxide
+    zoxide init fish | source
+else
+    echo "Unable to find zoxide executable."
+end
 
 if type -q brew
     if test -d (brew --prefix)"/share/fish/completions"
@@ -24,11 +32,13 @@ if type -q brew
     set -gx LD_LIBRARY_PATH "$(brew --prefix)/lib" "$LD_LIBRARY_PATH"
 end
 
-set -gx EDITOR nvim
-
-# pnpm
-set -gx PNPM_HOME "/home/bputh/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
+if type -q nvim
+    set -gx EDITOR nvim
 end
-# pnpm end
+
+if type -q pnpm
+    set -gx PNPM_HOME "/home/bputh/.local/share/pnpm"
+    if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+    end
+end
